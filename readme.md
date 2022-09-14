@@ -22,7 +22,7 @@ please follow the following instructions:
 ### build python 3.8.0
 $ conda create -n mdr python=3.8.0
 ### add channel
-onda config --append channels conda-forge
+conda config --append channels conda-forge
 ### go to the built enviroment
 $ conda activate mdr
 ### install some packages from conda
