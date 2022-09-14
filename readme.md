@@ -21,12 +21,16 @@ please follow the following instructions:
 ```
 ### build python 3.8.0
 $ conda create -n mdr python=3.8.0
+
 ### add channel
-conda config --append channels conda-forge
+$ conda config --append channels conda-forge
+
 ### activate the built enviroment
 $ conda activate mdr
+
 ### install packages with conda
 $ conda install --yes --file requirements.txt
+
 ### Using pip to install packages that can not be founda in conda
 $ pip install python-louvain==0.16
 ```
