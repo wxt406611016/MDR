@@ -1,0 +1,6 @@
+hdbscan==0.8.26
+lightgbm==2.3.1
+networkx==2.4
+numpy==1.22.3
+pandas==1.1.1
+tensorflow==2.3.0
