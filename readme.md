@@ -28,7 +28,7 @@ $ conda activate mdr
 ### install some packages from conda
 $ conda install --yes --file requirements.txt
 ### Using pip to install some packages that can not be founda in conda
-$ pip install python-louvain==0.16 shap==0.41.0
+$ pip install python-louvain==0.16
 ```
 
 ## Build Poisoned Dataset
