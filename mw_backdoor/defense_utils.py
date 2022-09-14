@@ -6,25 +6,11 @@ from sklearn.metrics import silhouette_samples
 from sklearn.preprocessing import MinMaxScaler
 
 def standardize_data(data_mat, feature_range=(-1, 1)):
-    """ Perform MinMax standardization.
-
-    :param data_mat: (array) raw data matrix
-    :param feature_range: (tuple) min and max values
-    :return: (array) normalized data matrix
-    """
     std_data = MinMaxScaler(feature_range=feature_range).fit_transform(data_mat)
 
     return std_data
 
 def compute_silhouettes(data_mat, labels, metric='euclidean', save_dir=''):
-    """ Compute silhouette scores for clustering.
-
-    :param data_mat: (array) data matrix
-    :param labels: (array) array of labels
-    :param metric: (str) distance metric to use in clustering
-    :param save_dir: (str) directory where to save resulting scores
-    :return: (array, dict) ailhouette scores and averages per cluster
-    """
     start_time = time.time()
     clus_silh = silhouette_samples(data_mat, labels, metric=metric)
     clus_avg_silh = {k: np.mean(clus_silh[labels == k]) for k in set(labels)}
@@ -35,13 +21,6 @@ def compute_silhouettes(data_mat, labels, metric='euclidean', save_dir=''):
 
 # # noinspection PyUnresolvedReferences
 def eval_cluster(labels, cluster_id, is_clean):
-    """ Evaluate true positives in provided cluster.
-
-    :param labels: (np.ndarray) array of labels
-    :param cluster_id: (int) identifier of the cluster to evaluate
-    :param is_clean: (array) bitmap where 1 means the point is not attacked
-    :return: (int) number of identified backdoored points
-    """
     cluster = labels == cluster_id
     identified = 0
 
@@ -53,27 +32,10 @@ def eval_cluster(labels, cluster_id, is_clean):
 
 
 def eval_clustering(labels, is_clean):
-    """ Evaluate entire clustering.
-
-    :param labels: (array) array of labels
-    :param is_clean: (array) bitmap where 1 means the point is not attacked
-    :return: (dict) mapping of cluster to # identified backdoors
-    """
     return {k: eval_cluster(labels, k, is_clean) for k in set(labels)}
 
 
-def cluster_hdbscan(data_mat, metric='euclidean', min_clus_size=5,
-                    min_samples=None, n_jobs=32, save_dir=''):
-    """ Cluster data using HDBSCAN.
-
-    :param data_mat: (array) data matrix
-    :param metric: (str) distance metric to use in clustering
-    :param min_clus_size: (int) minimum size of clusters to retain
-    :param min_samples: (int) minimum number of neighbours for core points
-    :param n_jobs: (int) number or jobs to spawn
-    :param save_dir: (str) directory where to save resulting labels
-    :return: (model, array) trained HDBSCAN model and labels array
-    """
+def cluster_hdbscan(data_mat, metric='euclidean', min_clus_size=5, min_samples=None, n_jobs=32, save_dir=''):
     start_time = time.time()
     hdb = hdbscan.HDBSCAN(
         metric=metric,
@@ -88,15 +50,6 @@ def cluster_hdbscan(data_mat, metric='euclidean', min_clus_size=5,
     return hdb, hdb_labs
 
 def show_clustering(labels, is_clean, print_mc=10, print_ev=10, avg_silh=None):
-    """ Show the result of a clustering.
-
-    :param labels: (array) array of labels
-    :param is_clean: (array) bitmap where 1 means the point is not attacked
-    :param print_mc: (int) number of cluster sizes to print
-    :param print_ev: (int) number of cluster evaluations to print
-    :param avg_silh: (dict) mapping of clusters to average silhouette scores
-    :return: (Counter, dict) counters of cluster sizes, and evaluations
-    """
     cluster_sizes = Counter(labels)
 
     print('       Total number of clusters: {}'.format(len(set(labels))))
@@ -110,13 +63,6 @@ def show_clustering(labels, is_clean, print_mc=10, print_ev=10, avg_silh=None):
     return cluster_sizes, evals
 
 def spectral_sign_paper(data_mat):
-    """ Compute cluster spectral signature.
-
-    Same as before but using the version proposed in the paper.
-    The multiplication is computed on the centered matrix.
-    
-    """
-
     clus_avg = np.average(data_mat, axis=0)  # R-hat
     clus_centered = data_mat - clus_avg  # M
 
