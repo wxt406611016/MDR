@@ -39,7 +39,7 @@ $ pip install python-louvain==0.16
 ---
 Before evaluating defense performance, we first use the attack strategies mentioned in the paper of ["Explanation-Guided Backdoor Poisoning Attacks Against Malware Classifiers"](https://github.com/ClonedOne/MalwareBackdoors) to poison the EMBER and Contagio datasets. 
 
-For ease of access to the poisoned datasets, to avoid the lengthy operation of extracting the feature vectors from binary or PDF files reproducing the attack process, the poisoned datasets feature numpy files are provided in the [LINK](https://github.com/wxt406611016/MDR/releases/tag/Poisoned_Datasets). Then Poisoned_Dataset.zip file can be easily downloaded.
+For ease of access to the poisoned datasets, to avoid the lengthy operation of reproducing the attack process, the poisoned datasets feature numpy files are provided in the [LINK](https://github.com/wxt406611016/MDR/releases/tag/Poisoned_Datasets). Then Poisoned_Dataset.zip file can be easily downloaded.
 
 After downloading the provided poisoned datasets feature numpy files from the link above (Poisoned_Dataset.zip) to the repository. Unzip the file first with ``$ unzip Poisoned_Dataset.zip``. Then the directory structure shows as below:
 ```
