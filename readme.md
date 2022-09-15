@@ -61,30 +61,30 @@ After downloading the provided poisoned datasets feature numpy files from the li
 ### Performacne Comparison Target Poisoned Ember Dataset
 * To reproduce the defense performance for no_attack scenario, shown in Table 1 of "No Attack" strategy, please run:
 
-* ``python Defense_ember.py --target no_attack``
+  ``python Defense_ember.py --target no_attack``
 
 * To reproduce the defense performacne for combined attack scenario, shown in Table 1 of "Combined" strategy, please run:
 
-* ``python Defense_ember.py --target combined``
+  ``python Defense_ember.py --target combined``
 
 * To reproduce the defense performacne for independent attack scenario, shown in Table 1 of "Independent" strategy, please run:
 
-* ``python Defense_ember.py --target independent``
+  ``python Defense_ember.py --target independent``
 
 ### Surrogate Model-agnostic evaluation
 * To reproduce the surrogate model-agnostic evaluation for combined attack scenario, shown in Figure 5(a), please run:
 
-* ``python Surrogate_model_agnostic.py --target combined``
+  ``python Surrogate_model_agnostic.py --target combined``
 
 * To reproduce the surrogate model-agnostic evaluation for independent attack scenario, shown in Figure 5(b), please run:
 
-* ``python Surrogate_model_agnostic.py --target independent``
+  ``python Surrogate_model_agnostic.py --target independent``
 
 ### Deployed Model-agnostic evaluation
 * To reproduce the deployed model-agnostic evaluation for combined attack scenario, shown in Figure 6(a), please run:
 
-* ``python Deployed_model_agnostic.py --target combined``
+  ``python Deployed_model_agnostic.py --target combined``
 
 * To reproduce the deployed model-agnostic evaluation for independent attack scenario, shown in Figure 6(b), please run:
 
-* ``python Deployed_model_agnostic.py --target independent``
+  ``python Deployed_model_agnostic.py --target independent``
