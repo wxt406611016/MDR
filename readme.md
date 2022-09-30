@@ -45,7 +45,7 @@ For ease of access to the poisoned datasets, to avoid the lengthy operation of r
 The poisoned datasets feature numpy files can also be downloaded with wget command by running:
 ``wget https://github.com/wxt406611016/MDR/releases/download/Poisoned_Datasets/Poisoned_Dataset.zip``
 
-After downloading the provided poisoned datasets feature numpy files from the link above (Poisoned_Dataset.zip) to the repository. Unzip the file first with ``$ unzip Poisoned_Dataset.zip``. Then the directory structure shows as below:
+After downloading the provided poisoned datasets feature numpy files (Poisoned_Dataset.zip). Unzip the file first with ``$ unzip Poisoned_Dataset.zip``. Then the directory structure shows as below:
 ```
 .
 ├── backdoor_ember_17
