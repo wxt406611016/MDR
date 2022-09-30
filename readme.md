@@ -48,7 +48,6 @@ The poisoned datasets feature numpy files can also be downloaded with wget comma
 After downloading the provided poisoned datasets feature numpy files (Poisoned_Dataset.zip) under the program folder (./MDR), unzip the file first with ``$ unzip Poisoned_Dataset.zip``. Then the program folder(./MDR) structure shows as below:
 ```
 ./MDR
-  .
   ├── backdoor_ember_17
   ├── backdoor_ember_8
   ├── backdoor_pdf_16
