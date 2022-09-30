@@ -16,7 +16,7 @@ python : 3.8.0
 ---
 This codebase has been developed and tested only with python 3.8.0.
 
-This code depends on several packages. We recommend to use conda to build the dependencies for the code. 
+This code depends on several packages. We recommend to use conda to build the dependencies for the code. However, the package louvain-python can not be found in conda repository. Therefore, for python-louvain package, use pip to install it. 
 please follow the following instructions:
 ```
 ### build python 3.8.0
