@@ -28,10 +28,11 @@ $ conda config --append channels conda-forge
 ### activate the built enviroment
 $ conda activate mdr
 
-### install packages with conda
+### install dependencies
+# First, use conda to install some packages except python-louvain
 $ conda install --yes --file requirements.txt
 
-### Using pip to install packages that can not be founda in conda
+# Second, use pip to install python-louvain because it can not be found in conda repository
 $ pip install python-louvain==0.16
 ```
 
@@ -40,6 +41,9 @@ $ pip install python-louvain==0.16
 Before evaluating defense performance, we used two attack strategies mentioned in the paper of ["Explanation-Guided Backdoor Poisoning Attacks Against Malware Classifiers"](https://github.com/ClonedOne/MalwareBackdoors) to poison the EMBER and Contagio datasets. 
 
 For ease of access to the poisoned datasets, to avoid the lengthy operation of reproducing the attack process, the poisoned datasets feature numpy files are provided in the [LINK](https://github.com/wxt406611016/MDR/releases/tag/Poisoned_Datasets). Then Poisoned_Dataset.zip file can be easily downloaded.
+
+The poisoned datasets feature numpy files can also be downloaded with wget command by running:
+``wget https://github.com/wxt406611016/MDR/releases/download/Poisoned_Datasets/Poisoned_Dataset.zip``
 
 After downloading the provided poisoned datasets feature numpy files from the link above (Poisoned_Dataset.zip) to the repository. Unzip the file first with ``$ unzip Poisoned_Dataset.zip``. Then the directory structure shows as below:
 ```
