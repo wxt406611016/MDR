@@ -60,7 +60,7 @@ After downloading the provided poisoned datasets feature numpy files (Poisoned_D
 
 ## Run Experiments
 ---
-### Performacne Comparison On Poisoned Ember Dataset
+### Performance Comparison On Poisoned Ember Dataset
 * To reproduce the defense performance for no_attack scenario, shown in Table 1 of "No Attack" strategy, please run:
 
   ``python Defense_ember.py --target no_attack``
